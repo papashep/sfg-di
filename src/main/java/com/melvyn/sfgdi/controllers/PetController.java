@@ -1,7 +1,6 @@
 package com.melvyn.sfgdi.controllers;
 
 import com.melvyn.sfgdi.services.PetService;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,7 +11,7 @@ public class PetController {
 
     private final PetService petService;
 
-    public PetController (@Qualifier("myPet") PetService petService) {
+    public PetController (PetService petService) {
         this.petService = petService;
     }
 

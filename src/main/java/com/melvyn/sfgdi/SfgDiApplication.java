@@ -60,7 +60,7 @@ public class SfgDiApplication {
 				ctx.getBean ("i18nController");
 		System.out.println (i18nController.sayHello ());
 
-		System.out.println ("------ Assignment");
+		System.out.println ("------ The Best Pet Is");
 		PetController petController = (PetController)
 				ctx.getBean ("petController");
 		System.out.println (petController.whichPetIsTheBest ());
