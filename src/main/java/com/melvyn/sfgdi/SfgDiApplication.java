@@ -8,10 +8,24 @@ import com.melvyn.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
 /**
  * Created by Melvyn on 10/Aug/2020
  */
-@SpringBootApplication
+
+/*
+	For an example we moved the 'services' package up to the 'com.melvyn' level removing it from the 'sfgdi' package.
+	Without the @ComponentScan line the application failed because Spring Boot could not see the 'services' package.
+	By adding the @ComponentScan annotation and by specifying:
+	@SpringBootApplication      // Scan the package / subpackages and down. It will not scan packages on the same level.
+	@ComponentScan(basePackages = {"com.melvyn.sfgdi.services", "com.melvyn"}) this will now include all the packages
+									listed above and override the @SpringBootApplication scan.
+
+	Note: the code has been reverted back to its original state before using the @ComponentScan
+	===========================================================================================
+*/
+
+@SpringBootApplication        // Scan the package / subpackages and down. It will not scan packages on the same level.
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
